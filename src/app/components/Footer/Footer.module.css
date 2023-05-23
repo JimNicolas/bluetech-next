@@ -1,0 +1,69 @@
+.container{
+    display: flex;
+    padding: 8rem 10%;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--darkBlue);
+    flex-wrap: wrap;
+    gap: 4rem;
+    border-top: .5px solid var(--fontColor);
+}
+.title{
+    color: var(--fontColor);
+}
+.ulistLink{
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.listLink a{
+    font-size: 16px;
+    color: var(--whiteColor);
+}
+.listLink a:hover {
+    font-size: 16px;
+    color: rgb(205, 205, 205);
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+}
+.ulistContact{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+}
+.ulistContact>li{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-weight: bolder;
+
+}
+.icon{
+    fill: var(--fontColor);
+    height: 32px;
+}
+.payMethod{
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+.listPay{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0;
+}
+@media (min-width: 768px) {
+    .container{
+        flex-direction: row;
+    }
+}
+@media (min-width: 768px) and (max-width:1000px) {
+    .container {
+        padding: 8rem 2rem;
+        align-items: flex-start;
+    }
+}

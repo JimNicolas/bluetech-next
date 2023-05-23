@@ -1,0 +1,19 @@
+.container{
+    background-color: var(--darkBlue);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 5px;
+    box-shadow: var(--boxShadowGeneral);
+}
+.enlace{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items:  center;
+}
+.title{
+    font-size: 24px;
+    color: var(--fontColor);
+}

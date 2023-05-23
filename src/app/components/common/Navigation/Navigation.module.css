@@ -1,0 +1,50 @@
+.navigation{
+    font-size: 24px;
+    position: sticky;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--navDesktopBackground);
+    top: 0;
+    z-index: 999;
+    border-bottom: solid .5px var(--fontColor);
+}
+.logo{
+    color: var(--fontColor);
+}
+.toggle{
+    border: none;
+    background-color: transparent;
+    fill: var(--fontColor);
+    cursor: pointer;
+}
+.containerIcon{
+    display: none;
+}
+.icon{
+    width: 24px;
+    fill: var(--fontColor);
+}
+@media (min-width: 768px) {
+    .logo{
+        width: max-content;
+    }
+    .toggle{
+        display: none;
+    }
+    .navigation{
+        padding: 0 10%;
+        gap: 2rem;
+        backdrop-filter: blur(6px);
+    }
+    .containerIcon{
+        display: flex;
+        gap: 1rem;
+    }
+}
+@media (min-width: 768px) and (max-width:1000px) {
+    .navigation{
+        padding: 0 2rem;
+    }
+}

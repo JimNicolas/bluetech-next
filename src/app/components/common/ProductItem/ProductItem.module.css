@@ -1,0 +1,27 @@
+.container{
+    background-color: var(--itemContainerColor);
+    box-shadow: var(--boxShadowGeneral);
+    border-radius: 5px;
+    text-align: left;
+    padding: 2rem;
+}
+.name{
+    color: var(--pColor);
+    font-size: 16px;
+}
+.containerShop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.priceOffer{
+    font-size: 24px;
+    color: var(--costOffer);
+    font-weight: bolder;
+}
+.priceReal{
+    font-size: 12px;
+    color: var(--costReal);
+    text-decoration: line-through;
+}

@@ -1,0 +1,9 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    padding: 8rem 0;
+    gap: 8rem;
+}
+.main>*{
+    gap: 8rem;
+}

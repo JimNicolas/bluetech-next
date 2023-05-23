@@ -1,0 +1,25 @@
+.button{
+    padding: 2rem 0;
+}
+.button, .buttonInput{
+    background-color: var(--buttonColor);
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: var(--pColor);
+    cursor: pointer;
+}
+.buttonInput{
+    padding: 2rem 0;
+}
+.button:hover, .buttonInput:hover{
+    background-color: var(--buttonColorHover);
+}
+@media (min-width: 768px) {
+    .buttonInput{
+        width: 16rem;
+        padding: 1rem 0;
+    }
+}

@@ -1,0 +1,51 @@
+@import 'normalize.css';
+
+/* Estilos globales */
+:root{
+    --fontColor:#00FFFF;
+    --navDesktopBackground:linear-gradient(89deg, rgba(2, 2, 2, 1) 0%, rgba(2, 48, 76, 1) 100%);
+    --fontColorHover:#04e3e3;
+    --darkBlue:#071E3D;
+    --buttonColor:#0077C8;
+    --buttonColorHover:#066aad;
+    --whiteColor:#F0F0F0;
+    --itemContainerColor:#24292e;
+    --costOffer:#FFA500;
+    --costReal:#87CEFA;
+    --boxShadowGeneral:0 0 1.9rem 0 rgba(0, 0, 0, 0.19);
+    --pColor:#ededed;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    background: var(--navDesktopBackground);
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+h1{
+    font-size: 64px;
+}
+h2{
+    font-size: 36px;
+}
+h3{
+    font-size: 24px;
+}
+button{
+    cursor: pointer;
+}
+p{
+    color: var(--pColor);
+    font-size: 16px;
+    line-height: 3.6rem;
+}
+/* Agrega más estilos globales aquí */

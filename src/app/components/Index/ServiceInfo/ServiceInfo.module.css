@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 10%;
+}
+.elementContainer{
+    width: max-content;
+    color: var(--fontColor);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+.containerIcon{
+    background-color: var(--darkBlue);
+    width: max-content;
+    padding: 2rem;
+    border-radius: 5px;
+}
+.icon{
+    fill: var(--fontColor);
+    width: 64px;
+    height: 64px;
+}
+.elementContainer p{
+    text-align: center;
+    font-size: 16px;
+    color: var(--pColor);
+    font-weight: bold;
+}
+@media (min-width: 768px) {
+    .container{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
