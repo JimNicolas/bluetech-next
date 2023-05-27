@@ -8,9 +8,6 @@ import { register } from '@/app/api/bluetechApi';
 import { useRouter } from 'next/navigation';
 import API_URL from '@/app/config';
 
-export const metadata = {
-  title: 'Register',
-};
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [registeredFailed, setRegisteredFailed] = useState(false);

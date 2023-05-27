@@ -8,9 +8,6 @@ import { loginAuthentication } from '@/app/api/bluetechApi';
 import { useRouter } from 'next/navigation';
 import API_URL from '@/app/config';
 
-export const metadata = {
-  title: 'Login',
-};
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const [loginFailed, setLoginFailed] = useState(false);
