@@ -91,9 +91,9 @@ export default function SignIn() {
           </form>
 
           <span className={styles.lastSpan}>
-            Don&apos;t have an account Sign up{' '}
+            Don&apos;t have an account{' '}
             <Link className={styles.lastSpanLink} href={'/register'}>
-              here
+              Sign up here
             </Link>
           </span>
         </div>
