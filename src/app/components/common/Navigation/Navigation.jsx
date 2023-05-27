@@ -67,7 +67,7 @@ export default function Navigation() {
       <ButtonSign
         backgroundColor={'#00FFFF'}
         color={'#071E3D'}
-        link={'/sign'}
+        link={'/signIn'}
         text={'SIGN IN'}
         onClick={hiddenMenu}
       ></ButtonSign>

@@ -1,0 +1,151 @@
+/* CONTENEDOR DERECHA */ 
+.containerRight {
+    background-color: var(--darkBlue);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 0px 0px 18px 0px var(--fontColor);
+}
+
+.titleRight {
+    font-size: 48px;
+    color: var(--fontColor);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+.labelCredential {
+    font-size: 16px;
+    color: var(--fontColor);
+}
+
+.fullname, 
+.email,
+.password {
+    height: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(127, 127, 127);
+    outline: none;
+    font-size: 16px;
+    color: var(--fontColor);
+    padding: 5px 1rem;
+}
+.password {
+    width: 100%;
+    padding-right: 4rem;
+}
+
+.containerPassword {
+    display: flex;
+}
+
+.showPassword {
+    position: relative;
+    right: 3rem;
+    display: flex;
+    width: max-content;
+    align-items: center;
+}
+
+.iconEye {
+    height: 24px;
+    width: 24px;
+    fill: var(--fontColor);
+    cursor: pointer;
+    position: absolute;
+}
+
+.help {
+    display: flex;
+    padding: 1rem 1rem;
+    justify-content: space-between;
+}
+
+.help * {
+    color: rgb(114, 190, 241);
+    font-size: 12px;
+}
+
+.forgotPassword {
+    text-decoration: underline;
+}
+
+.containerCheckbox {
+    display: flex;
+    gap: 1rem;
+}
+
+.checkbox {
+    width: 2rem;
+}
+
+.signUp {
+    color: rgb(114, 190, 241);
+    font-size: 12px;
+}
+
+.signUpLink {
+    color: rgb(114, 190, 241);
+    text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+    .containerLeft {
+        display: none;
+    }
+
+    .containerRight {
+        border-radius: 10px;
+    }
+
+    .help {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding: 8rem 1rem;
+    }
+
+    .containerRight {
+        padding: 4rem 1rem;
+    }
+
+    .titleRight {
+        font-size: 24px;
+    }
+
+    .labelCredential,
+    .fullname,
+    .email,
+    .password {
+        font-size: 12px;
+    }
+
+    .form {
+        gap: 1rem;
+    }
+}
+
+.badCredentials{
+        background-color: #953d5c;
+        border: 1px solid red
+}
+.containerBubbleRegisteredFailed{
+    height: 2rem;
+    background-color: #3296b9;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 1rem;
+    color: #cfcfcf;
+}

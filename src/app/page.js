@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './page.module.css';
 import Header from './components/Index/Header/Header';
 import ServiceInfo from './components/Index/ServiceInfo/ServiceInfo';
@@ -6,6 +5,7 @@ import FeaturedProduct from './components/Index/FeaturedProduct/FeaturedProduct'
 import ArticleSection from './components/Index/ArticleSection/ArticleSection';
 import TrendingProduct from './components/Index/TrendingProducts/TrendingProducts';
 import SubscribeNewsletter from './components/Index/SubscribeNewsletter/SubscribeNewsletter';
+import Head from 'next/head';
 export default function Home() {
   return (
     <>
