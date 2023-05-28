@@ -1,3 +1,3 @@
-const API_URL = 'http://192.168.0.3:3000';
+const API_URL = 'https://bluetech-back-production.up.railway.app';
 
 export default API_URL;
