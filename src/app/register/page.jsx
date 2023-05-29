@@ -40,7 +40,7 @@ export default function Register() {
             {registeredFailed ? (
               <>
                 <div className={styles.containerBubbleRegisteredFailed}>
-                  <h4>Este correo ya se encuentra reguistrado</h4>
+                  <h4>This email is already registered</h4>
                 </div>
               </>
             ) : (
