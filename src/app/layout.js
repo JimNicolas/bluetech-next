@@ -2,6 +2,8 @@ import { Inter } from 'next/font/google';
 import Navigation from './components/common/Navigation/Navigation';
 import './globals.css';
 import Footer from './components/Footer/Footer';
+//  redux:
+import { Providers } from '@/redux/providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -14,9 +16,11 @@ export default function RootLayout({ children }) {
     <html lang='es'>
       <body className={inter.className} suppressHydrationWarning={true}>
         {/*SUPRIME EL WARNING DEL CONSOLE POR HIDRATACION*/}
-        <Navigation />
-        {children}
-        <Footer />
+        <Providers>
+          <Navigation />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
