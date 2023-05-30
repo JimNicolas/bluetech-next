@@ -12,6 +12,7 @@ export const loginAuthentication = async (
       headers,
       method: 'POST',
       body: JSON.stringify({ email: emailValue, password: passwordValue }),
+      credentials: 'include', // Permite incluir cookies en la solicitud
     });
     if (!response.ok) {
       throw new Error('Error al enviar los datos');
@@ -33,6 +34,7 @@ export const register = async (apiUrl, username, email, password) => {
         email: email,
         password: password,
       }),
+      credentials: 'include',
     });
     if (!response.ok) {
       throw new Error('Error al enviar los datos');
