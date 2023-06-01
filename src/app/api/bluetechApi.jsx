@@ -60,3 +60,15 @@ export const getUsersData = async (apiUrl) => {
     console.log('Error al obtener usuarios');
   }
 };
+
+export const logoutFetch = async (apiUrl, cookie) => {
+  try {
+    const response = await fetch(apiUrl, {
+      headers,
+      method: 'POST',
+      credentials: 'include',
+    });
+    const { result } = await response.json();
+    return result;
+  } catch (error) {}
+};
