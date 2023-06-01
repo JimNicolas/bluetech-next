@@ -2,7 +2,7 @@
 import styles from './page.module.css';
 import { getUsersData, logoutFetch } from '../api/bluetechApi';
 import { useRouter } from 'next/navigation';
-function profile() {
+function Profile() {
   const router = useRouter();
   const handleShowProfile = async () => {
     const datos = await getUsersData(`${process.env.API_URL}/obtenerCookies`);
@@ -21,4 +21,4 @@ function profile() {
   );
 }
 
-export default profile;
+export default Profile;
