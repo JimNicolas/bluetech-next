@@ -12,7 +12,7 @@ export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const [loginFailed, setLoginFailed] = useState(false);
   const router = useRouter();
-
+  console.log(API_URL);
   const handleClickOnShowPassword = () => {
     setShowPassword(!showPassword);
   };

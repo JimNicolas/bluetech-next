@@ -1,6 +1,4 @@
-import { API_URL_LOCAL } from './configLocal';
-
 const API_URL =
-  API_URL_LOCAL || 'https://bluetech-back-production.up.railway.app';
-
+  process.env.APP_API_URL || 'https://bluetech-back-production.up.railway.app';
+// console.log(API_URL);
 export default API_URL;
