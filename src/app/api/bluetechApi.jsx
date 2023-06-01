@@ -45,3 +45,18 @@ export const register = async (apiUrl, username, email, password) => {
     throw new Error('Error al enviar los datos');
   }
 };
+export const getUsersData = async (apiUrl) => {
+  try {
+    const response = await fetch(apiUrl, {
+      headers,
+      method: 'GET',
+      credentials: 'include',
+    });
+    if (!response.ok) {
+      throw new Error('Error al obtener las cookies del usuario');
+    }
+    return response.json();
+  } catch (error) {
+    console.log('Error al obtener usuarios');
+  }
+};
