@@ -6,7 +6,6 @@ import Button from '../components/common/Button/Button';
 import { useState } from 'react';
 import { register } from '@/app/api/bluetechApi';
 import { useRouter } from 'next/navigation';
-import API_URL from '@/app/config';
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -19,7 +18,7 @@ export default function Register() {
   const registerHandle = async (event) => {
     event.preventDefault();
     const { registered } = await register(
-      `${API_URL}/register`,
+      `${process.env.API_URL}/register`,
       event.target.username.value,
       event.target.email.value,
       event.target.password.value
