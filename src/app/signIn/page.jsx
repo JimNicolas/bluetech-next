@@ -6,13 +6,11 @@ import Button from '../components/common/Button/Button';
 import { useState } from 'react';
 import { loginAuthentication } from '@/app/api/bluetechApi';
 import { useRouter } from 'next/navigation';
-import API_URL from '@/app/config';
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const [loginFailed, setLoginFailed] = useState(false);
   const router = useRouter();
-  console.log(API_URL);
   const handleClickOnShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -20,7 +18,7 @@ export default function SignIn() {
   const loginHandle = async (event) => {
     event.preventDefault();
     const { authentication } = await loginAuthentication(
-      `${API_URL}/loginAuthentication`,
+      `${process.env.API_URL}/loginAuthentication`,
       event.target.email.value,
       event.target.password.value
     );
