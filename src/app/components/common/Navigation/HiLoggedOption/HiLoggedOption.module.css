@@ -1,0 +1,44 @@
+.container{
+    background-color: rgba(97, 100, 100, 0.28);
+    min-width: 16rem;
+    border-radius: 5px;
+    overflow: hidden;
+    padding-left: 0;
+    border-bottom: 1px solid #787878;
+    margin: 0 ;
+}
+.close{
+    height: 4rem;
+}
+.open{
+    height: max-content;
+}
+.container>li{
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.name{
+    color: white;
+    font-size: 16px;
+    justify-content: space-between;
+    border-top: none;
+    border-left: none;
+}
+.title{
+    padding-left: 2rem;
+}
+.showMore{
+    background-color: transparent;
+    height: 100%;
+    border: none;
+    border-left: 1px solid #787878;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+
+}
+.svg{
+    fill: #DDD7D7;
+}

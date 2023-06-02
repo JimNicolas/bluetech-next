@@ -4,7 +4,8 @@ import styles from './Navigation.module.css';
 import { SearchIcon, FavoriteIcon, CartIcon, ToggleIcon } from '../Icon';
 import ListNav from './ListNav/ListNav';
 import { useState } from 'react';
-import ButtonSign from '../ButtonSign/ButtonSign.jsx';
+import ButtonSign from './ButtonSign/ButtonSign.jsx';
+import HiLoggedOption from './HiLoggedOption/HiLoggedOption';
 
 const DATA_LINK = [
   {
@@ -64,13 +65,14 @@ export default function Navigation() {
           <CartIcon className={styles.icon} />
         </Link>
       </div>
-      <ButtonSign
+      {/* <ButtonSign
         backgroundColor={'#00FFFF'}
         color={'#071E3D'}
         link={'/signIn'}
         text={'SIGN IN'}
         onClick={hiddenMenu}
-      ></ButtonSign>
+      ></ButtonSign> */}
+      <HiLoggedOption />
     </nav>
   );
 }
