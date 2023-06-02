@@ -1,3 +1,4 @@
+'use client';
 const headers = {
   'Content-Type': 'application/json',
 };
