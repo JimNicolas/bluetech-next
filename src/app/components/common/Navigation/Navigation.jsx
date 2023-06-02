@@ -65,14 +65,14 @@ export default function Navigation() {
           <CartIcon className={styles.icon} />
         </Link>
       </div>
-      {/* <ButtonSign
+      <ButtonSign
         backgroundColor={'#00FFFF'}
         color={'#071E3D'}
         link={'/signIn'}
         text={'SIGN IN'}
         onClick={hiddenMenu}
-      ></ButtonSign> */}
-      <HiLoggedOption />
+      ></ButtonSign>
+      {/* <HiLoggedOption /> */}
     </nav>
   );
 }

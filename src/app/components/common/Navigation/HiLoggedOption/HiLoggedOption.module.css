@@ -1,33 +1,37 @@
+.componentContainer{
+    position: relative;
+    height: 4rem;
+    width: 16rem;
+    padding-right: 2rem;
+}
 .container{
-    background-color: rgba(97, 100, 100, 0.28);
+    background-color: #1c3a4c;
     min-width: 16rem;
     border-radius: 5px;
     overflow: hidden;
     padding-left: 0;
     border-bottom: 1px solid #787878;
     margin: 0 ;
-}
-.close{
     height: 4rem;
-}
-.open{
-    height: max-content;
+    transition: .2s 0s height ease ;
 }
 .container>li{
     height: 4rem;
     width: 100%;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #787878;
+    border-right: 1px solid #787878;
+    border-left: 1px solid #787878;
 }
 .name{
-    color: white;
-    font-size: 16px;
     justify-content: space-between;
     border-top: none;
     border-left: none;
 }
-.title{
-    padding-left: 2rem;
+.listButton{
+    font-size: 16px;
+    color: white;
 }
 .showMore{
     background-color: transparent;
@@ -37,8 +41,57 @@
     display: flex;
     justify-content: center;
     padding: 1rem;
-
+    cursor: pointer;
 }
 .svg{
     fill: #DDD7D7;
+}
+.listButton > *{
+    padding-left: 2rem
+}
+.title{
+    padding-left: 2rem;
+    cursor: default;
+}
+.enlace{
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.logOutButton{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    padding-left: 2rem;
+    color: white;
+}
+@media (max-width: 768px) {
+    .container{
+        max-width: max-content;
+    }
+.listButton > *{
+    padding-left: .5rem
+}
+.title{
+    padding-left: .5rem;
+}
+}
+@media (max-width: 410px) {
+    .componentContainer{
+        padding-right: .5rem;
+        width: 12rem;
+    }
+    .container{
+        min-width: auto;
+    }
+    .title{
+        padding: 0 1rem;
+    }
+}
+.textButton:hover{
+    color: rgb(212, 212, 212);
 }
