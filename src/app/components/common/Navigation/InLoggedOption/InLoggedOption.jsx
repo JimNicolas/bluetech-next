@@ -1,9 +1,10 @@
 'use client';
 import Link from 'next/link';
-import styles from './HiLoggedOption.module.css';
+import styles from './InLoggedOption.module.css';
 import { DownIcon } from '../../Icon';
 import { useState } from 'react';
-export default function HiLoggedOption() {
+import { logoutFetch } from '@/app/api/bluetechApi';
+export default function InLoggedOption() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const handleButtonMenu = () => {
     setIsOpenMenu(!isOpenMenu);
@@ -37,7 +38,10 @@ export default function HiLoggedOption() {
             </Link>
           </li>
           <li className={styles.listButton}>
-            <button className={`${styles.logOutButton} ${styles.textButton}`}>
+            <button
+              className={`${styles.logOutButton} ${styles.textButton}`}
+              onClick={() => logoutFetch(`${process.env.API_URL}`)}
+            >
               Log Out
             </button>
           </li>

@@ -62,7 +62,7 @@ export const getUsersData = async (apiUrl) => {
   }
 };
 
-export const logoutFetch = async (apiUrl, cookie) => {
+export const logoutFetch = async (apiUrl) => {
   try {
     const response = await fetch(apiUrl, {
       headers,

@@ -11,6 +11,7 @@ export default function ButtonSign({
     backgroundColor: backgroundColor,
     color: color,
   };
+
   return (
     <Link
       className={styles.LinkButton}
