@@ -1,6 +1,3 @@
-'use client';
-import { useSelector } from 'react-redux';
-
 export const metadata = {
   title: 'Products',
 };
