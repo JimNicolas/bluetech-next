@@ -66,6 +66,7 @@ export default function Navigation() {
   }, []);
   const username = useSelector((state) => state.userLoggedReducer.username);
   const isLogged = useSelector((state) => state.userLoggedReducer.isLogged);
+  console.log('IsLogged: ', isLogged);
   return (
     <nav className={styles.navigation}>
       {/* Toggle */}
@@ -97,7 +98,7 @@ export default function Navigation() {
           backgroundColor={'#00FFFF'}
           color={'#071E3D'}
           link={'/signIn'}
-          text={username}
+          text={'SIGN IN'}
           onClick={hiddenMenu}
         ></ButtonSign>
       ) : (

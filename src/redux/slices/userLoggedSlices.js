@@ -18,21 +18,13 @@ export const userLoggedSlice = createSlice({
   },
   reducers: {
     login: (state, action) => {
-      const { logged, username, email, password } = action.payload;
-      state.isLogged = logged;
+      const { isLogged, username, email, password } = action.payload;
+      state.isLogged = isLogged;
       state.username = username;
       state.email = email;
       state.password = password;
     },
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(getUserData.fulfilled, (state, action) => {
-  //     const { username, email, password } = action.payload;
-  //     state.username = username;
-  //     state.email = email;
-  //     state.password = password;
-  //   });
-  // },
 });
 
 export const { login } = userLoggedSlice.actions;
