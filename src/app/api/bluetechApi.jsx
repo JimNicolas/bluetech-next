@@ -12,6 +12,7 @@ export const loginAuthentication = async (
     const response = await fetch(apiUrl, {
       headers,
       method: 'POST',
+      mode: 'cors',
       body: JSON.stringify({ email: emailValue, password: passwordValue }),
       credentials: 'include', // Permite incluir cookies en la solicitud
     });
