@@ -25,7 +25,7 @@ export default function SignIn() {
       password
     );
     if (authentication) {
-      Cookies.set('userToken', token);
+      Cookies.set('userToken', token, { expires: 1 });
     }
     authentication ? router.push('/') : setLoginFailed(true);
   };
