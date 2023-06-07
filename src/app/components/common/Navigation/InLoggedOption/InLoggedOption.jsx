@@ -5,6 +5,8 @@ import { DownIcon } from '../../Icon';
 import { useState } from 'react';
 import { logoutFetch } from '@/app/api/bluetechApi';
 import { useSelector } from 'react-redux';
+import { deleteCookie } from '@/app/utils/Cookies';
+import { useRouter } from 'next/navigation';
 export default function InLoggedOption() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const handleButtonMenu = () => {
@@ -17,6 +19,14 @@ export default function InLoggedOption() {
       heightElement = container.children.length * 4;
     }
     container.style.height = heightElement + 'rem';
+  };
+  const router = useRouter();
+  const logoutHandle = async () => {
+    const { result } = await logoutFetch(`${process.env.API_URL}/logout`);
+    if (result) {
+      await deleteCookie();
+    }
+    router.push('/');
   };
   const username = useSelector((state) => state.userLoggedReducer.username);
   return (
@@ -42,7 +52,7 @@ export default function InLoggedOption() {
           <li className={styles.listButton}>
             <button
               className={`${styles.logOutButton} ${styles.textButton}`}
-              onClick={() => logoutFetch(`${process.env.API_URL}`)}
+              onClick={logoutHandle}
             >
               Log Out
             </button>

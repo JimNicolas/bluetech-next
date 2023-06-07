@@ -72,5 +72,7 @@ export const logoutFetch = async (apiUrl) => {
     });
     const { result } = await response.json();
     return result;
-  } catch (error) {}
+  } catch (error) {
+    console.error('No se pudo desloguear');
+  }
 };

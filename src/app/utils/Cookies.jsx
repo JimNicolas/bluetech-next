@@ -16,3 +16,6 @@ export const getCookie = async () => {
   const tokenData = jwt.decode(token.value);
   return tokenData;
 };
+export const deleteCookie = async () => {
+  cookies().remove('userToken', { path: '/' });
+};
