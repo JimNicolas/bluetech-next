@@ -17,8 +17,10 @@ export const getCookie = async () => {
   return tokenData;
 };
 export const deleteCookie = async () => {
-  cookies().remove('userToken', {
-    path: '/',
-    domain: 'bluetech-next.vercel.app',
+  cookies().set({
+    name: 'userToken',
+    value: '',
+    httpOnly: true,
+    maxAge: 0,
   });
 };
