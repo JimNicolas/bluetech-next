@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { loginAuthentication } from '@/app/api/bluetechApi';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
+import { create } from '../utils/ObtenerUsuarios';
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -25,7 +26,7 @@ export default function SignIn() {
       password
     );
     if (authentication) {
-      Cookies.set('userToken', token, { expires: 1 });
+      create(token);
     }
     authentication ? router.push('/') : setLoginFailed(true);
   };
