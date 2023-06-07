@@ -6,13 +6,11 @@ import Button from '../components/common/Button/Button';
 import { useState } from 'react';
 import { loginAuthentication } from '@/app/api/bluetechApi';
 import { useRouter } from 'next/navigation';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '@/redux/slices/userLoggedSlices';
+import Cookies from 'js-cookie';
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const [loginFailed, setLoginFailed] = useState(false);
-  const dispatch = useDispatch();
   const router = useRouter();
   const handleClickOnShowPassword = () => {
     setShowPassword(!showPassword);
@@ -21,11 +19,14 @@ export default function SignIn() {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    const { authentication } = await loginAuthentication(
+    const { authentication, token } = await loginAuthentication(
       `${process.env.API_URL}/loginAuthentication`,
       email,
       password
     );
+    if (authentication) {
+      Cookies.set('userToken', token);
+    }
     authentication ? router.push('/') : setLoginFailed(true);
   };
 

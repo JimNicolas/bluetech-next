@@ -42,31 +42,6 @@ export default function Navigation() {
       setOnClick(!onClick);
     }
   };
-
-  useEffect(() => {
-    console.log('Se ejecuta el use effect');
-    const reqData = async () => {
-      try {
-        console.log('Se ejecutó');
-        const tokenData = await ObtenerUsuario();
-        console.log(tokenData);
-        dispatch(
-          login({
-            isLogged: true,
-            username: tokenData.username,
-            email: tokenData.email,
-            password: tokenData.password,
-          })
-        );
-      } catch (error) {
-        console.log('No se realizó la solicitud');
-      }
-    };
-    reqData();
-  }, []);
-  const username = useSelector((state) => state.userLoggedReducer.username);
-  const isLogged = useSelector((state) => state.userLoggedReducer.isLogged);
-  console.log('IsLogged: ', isLogged);
   return (
     <nav className={styles.navigation}>
       {/* Toggle */}
@@ -93,17 +68,15 @@ export default function Navigation() {
           <CartIcon className={styles.icon} />
         </Link>
       </div>
-      {!isLogged ? (
-        <ButtonSign
-          backgroundColor={'#00FFFF'}
-          color={'#071E3D'}
-          link={'/signIn'}
-          text={'SIGN IN'}
-          onClick={hiddenMenu}
-        ></ButtonSign>
-      ) : (
-        <InLoggedOption />
-      )}
+
+      <ButtonSign
+        backgroundColor={'#00FFFF'}
+        color={'#071E3D'}
+        link={'/signIn'}
+        text={'SIGN IN'}
+        onClick={hiddenMenu}
+      ></ButtonSign>
+      {/* <InLoggedOption /> */}
     </nav>
   );
 }
