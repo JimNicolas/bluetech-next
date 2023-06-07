@@ -17,10 +17,8 @@ export const getCookie = async () => {
   return tokenData;
 };
 export const deleteCookie = async () => {
-  cookies().set({
-    name: 'userToken',
-    value: '',
-    httpOnly: true,
-    maxAge: 0,
+  cookies().remove('userToken', {
+    path: '/',
+    domain: '.vercel.app',
   });
 };
