@@ -4,6 +4,7 @@ import styles from './InLoggedOption.module.css';
 import { DownIcon } from '../../Icon';
 import { useState } from 'react';
 import { logoutFetch } from '@/app/api/bluetechApi';
+import { useSelector } from 'react-redux';
 export default function InLoggedOption() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const handleButtonMenu = () => {
@@ -17,13 +18,14 @@ export default function InLoggedOption() {
     }
     container.style.height = heightElement + 'rem';
   };
+  const username = useSelector((state) => state.userLoggedReducer.username);
   return (
     <>
       <div className={styles.componentContainer}>
         <ul className={styles.container}>
           <li className={styles.name}>
             <span className={`${styles.title} ${styles.listButton}`}>
-              Hi, Nico
+              Hi, {username}
             </span>
             <button className={styles.showMore} onClick={handleButtonMenu}>
               <DownIcon className={styles.svg} />

@@ -6,9 +6,9 @@ import ListNav from './ListNav/ListNav';
 import ButtonSign from './ButtonSign/ButtonSign.jsx';
 import InLoggedOption from './InLoggedOption/InLoggedOption';
 import { useEffect, useState } from 'react';
-import ObtenerUsuario from '@/app/utils/ObtenerUsuarios';
+import ObtenerUsuario from '@/app/utils/Cookies';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '@/redux/slices/userLoggedSlices';
+import { getUserData, login } from '@/redux/slices/userLoggedSlices';
 
 const DATA_LINK = [
   {
@@ -42,6 +42,10 @@ export default function Navigation() {
       setOnClick(!onClick);
     }
   };
+  useEffect(() => {
+    dispatch(getUserData());
+  }, []);
+  const isLogged = useSelector((state) => state.userLoggedReducer.isLogged);
   return (
     <nav className={styles.navigation}>
       {/* Toggle */}
@@ -68,15 +72,17 @@ export default function Navigation() {
           <CartIcon className={styles.icon} />
         </Link>
       </div>
-
-      <ButtonSign
-        backgroundColor={'#00FFFF'}
-        color={'#071E3D'}
-        link={'/signIn'}
-        text={'SIGN IN'}
-        onClick={hiddenMenu}
-      ></ButtonSign>
-      {/* <InLoggedOption /> */}
+      {isLogged ? (
+        <InLoggedOption />
+      ) : (
+        <ButtonSign
+          backgroundColor={'#00FFFF'}
+          color={'#071E3D'}
+          link={'/signIn'}
+          text={'SIGN IN'}
+          onClick={hiddenMenu}
+        ></ButtonSign>
+      )}
     </nav>
   );
 }

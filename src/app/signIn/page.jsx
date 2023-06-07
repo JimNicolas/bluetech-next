@@ -7,9 +7,12 @@ import { useState } from 'react';
 import { loginAuthentication } from '@/app/api/bluetechApi';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
-import { create } from '../utils/ObtenerUsuarios';
+import { CreateCookie, getCookie } from '../utils/Cookies';
+import { useDispatch } from 'react-redux';
+import { login } from '@/redux/slices/userLoggedSlices';
 
 export default function SignIn() {
+  const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const [loginFailed, setLoginFailed] = useState(false);
   const router = useRouter();
@@ -26,7 +29,8 @@ export default function SignIn() {
       password
     );
     if (authentication) {
-      create(token);
+      CreateCookie(token);
+      dispatch(login({ isLogged: true }));
     }
     authentication ? router.push('/') : setLoginFailed(true);
   };

@@ -1,31 +1,37 @@
+import { getCookie } from '@/app/utils/Cookies';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-// export const getUserData = createAsyncThunk(
-//   'userLogged/getUserData',
-//   async () => {
-//     const userData = await getCookies();
-//     return userData;
-//   }
-// );
-
+export const getUserData = createAsyncThunk(
+  'userLogged/getUserData',
+  async () => {
+    const userData = await getCookie();
+    return userData;
+  }
+);
 export const userLoggedSlice = createSlice({
   name: 'userLogged',
   initialState: {
     isLogged: false,
-    token: null,
     username: '',
     email: '',
     password: '',
   },
   reducers: {
     login: (state, action) => {
-      const { isLogged, token, username, email, password } = action.payload;
+      const { isLogged, username, email, password } = action.payload;
       state.isLogged = isLogged;
-      state.token = token;
       state.username = username;
       state.email = email;
       state.password = password;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getUserData.fulfilled, (state, action) => {
+      const { username, email } = action.payload;
+      state.isLogged = true;
+      state.username = username;
+      state.email = email;
+    });
   },
 });
 
