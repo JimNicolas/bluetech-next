@@ -28,9 +28,10 @@ export const userLoggedSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getUserData.fulfilled, (state, action) => {
       const { username, email } = action.payload;
-      state.isLogged = true;
+      state.isLogged = username.length == 0 ? false : true;
       state.username = username;
       state.email = email;
+      console.log('el username es: ', username);
     });
   },
 });

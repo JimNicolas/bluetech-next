@@ -13,8 +13,13 @@ export async function CreateCookie(token) {
 export const getCookie = async () => {
   const cookieStore = cookies();
   const token = cookieStore.get('userToken');
-  const tokenData = jwt.decode(token.value);
-  return tokenData;
+  if (token) {
+    // console.log(jwt.decode(token.value));
+    return jwt.decode(token.value);
+  } else {
+    return { username: '', email: '' };
+  }
+  // console.log(token); // Si existe el token devuelve un objeto {name: 'userToken', value: 'token', path '/'} si no existe estos deben ser vacios
 };
 export const deleteCookie = async () => {
   cookies().remove('userToken', {

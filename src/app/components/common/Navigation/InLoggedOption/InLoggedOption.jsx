@@ -9,6 +9,9 @@ import { deleteCookie } from '@/app/utils/Cookies';
 import { useRouter } from 'next/navigation';
 export default function InLoggedOption() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [username, setUsername] = useState(
+    useSelector((state) => state.userLoggedReducer.username)
+  );
   const handleButtonMenu = () => {
     setIsOpenMenu(!isOpenMenu);
     const container = document.querySelector(`.${styles.container}`);
@@ -22,13 +25,13 @@ export default function InLoggedOption() {
   };
   const router = useRouter();
   const logoutHandle = async () => {
-    const { result } = await logoutFetch(`${process.env.API_URL}/logout`);
+    const { result } = await logoutFetch(`${process.env.API_URL}/logout`); // Elimina el token y la cookie del backend
     if (result) {
       await deleteCookie();
     }
-    router.push('/');
+    router.refresh();
   };
-  const username = useSelector((state) => state.userLoggedReducer.username);
+
   return (
     <>
       <div className={styles.componentContainer}>
