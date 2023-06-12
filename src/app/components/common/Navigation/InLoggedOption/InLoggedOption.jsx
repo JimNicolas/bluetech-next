@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './InLoggedOption.module.css';
 import { DownIcon } from '../../Icon';
 import { useState } from 'react';
-import { logoutFetch } from '@/app/api/bluetechApi';
+import { logoutFetch } from '@/app/api/apiUser';
 import { useSelector } from 'react-redux';
 import { deleteCookie } from '@/app/utils/Cookies';
 import { useRouter } from 'next/navigation';

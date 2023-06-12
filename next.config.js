@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media.solotodo.com',
+        port: '',
+        pathname: '/media/products/**',
+      },
+    ],
+  },
   async rewrites() {
     return [
       {

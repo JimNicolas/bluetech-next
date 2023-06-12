@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { PageIcon, EyeIcon } from '../components/common/Icon';
 import Button from '../components/common/Button/Button';
 import { useState } from 'react';
-import { loginAuthentication } from '@/app/api/bluetechApi';
+import { loginAuthentication } from '@/app/api/apiUser';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
 import { CreateCookie, getCookie } from '../utils/Cookies';

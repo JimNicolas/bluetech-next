@@ -1,6 +1,6 @@
 'use client';
 import styles from './page.module.css';
-import { getUsersData, logoutFetch } from '../api/bluetechApi';
+import { getUsersData, logoutFetch } from '../api/apiUser';
 import { useRouter } from 'next/navigation';
 function Profile() {
   const router = useRouter();

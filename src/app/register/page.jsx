@@ -4,7 +4,7 @@ import { PageIcon, EyeIcon } from '../components/common/Icon';
 import Link from 'next/link';
 import Button from '../components/common/Button/Button';
 import { useState } from 'react';
-import { register } from '@/app/api/bluetechApi';
+import { register } from '@/app/api/apiUser';
 import { useRouter } from 'next/navigation';
 
 export default function Register() {
